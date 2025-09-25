@@ -120,12 +120,12 @@ Abbiamo un robot speciale chiamato **leader**, che *guida* gli altri, ottenendo 
 2. Tutti i robot puntano verso il leader
 3. I robot "danzano" in modo coordinato, raggiungendo la stessa direzione puntata dal leader
 4. Formazioni di semplici strutture, dove tutti i robot, rispetto al leader, possono:
-    - disporsi in linea,
-    - disporsi a cerchio,
-    - disporsi in fila,
-    - disporsi in quadrato,
-    - disporsi in formazione a V,
-    - guardare il leader.
+    - guardare il leader (scenario 1),
+    - disporsi in formazione a V (scenario 2),
+    - disporsi in linea (scenario 3),
+    - disporsi a cerchio (scenario 4),
+    - disporsi in quadrato (scenario 5),
+    - disporsi in fila (scenario 6).
 
 {{% /col %}}{{% /multicol %}}
 
