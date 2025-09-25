@@ -29,7 +29,8 @@ outputs = ["Reveal"]
   
 </script>
 
-# Ecosistemi coordinati <br/>di robot programmabili
+# L'unione fa la forza: <br/> sciami di droni
+### *Project Emerge*
 
 
 <img src="example-background.svg" width="25%" class="my-5" />
