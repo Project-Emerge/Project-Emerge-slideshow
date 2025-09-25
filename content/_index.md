@@ -35,7 +35,7 @@ outputs = ["Reveal"]
 <img src="example-background.svg" width="25%" class="my-5" />
 
 <div style="font-size: 0.8em">
-Gianluca Aguzzi, Martina Baiardi, Roberto Casadei,  Angela Cortecchia, <br/>
+Gianluca Aguzzi, Martina Baiardi, Samuele Burattini, Roberto Casadei, Angela Cortecchia, <br/>
 Davide Domini, Nicolas Farabegoli, Danilo Pianini, Mirko Viroli
 </div>
 
@@ -43,7 +43,6 @@ Davide Domini, Nicolas Farabegoli, Danilo Pianini, Mirko Viroli
 <img src="images/robot-2.svg" width="10%" id="robot2" style="position: absolute; bottom: 0%; right: 8%;" />
 
 ---
-
 
 
 {{% multicol %}}{{% col class="text-right" %}}
@@ -68,15 +67,41 @@ Davide Domini, Nicolas Farabegoli, Danilo Pianini, Mirko Viroli
 {{% /col %}}{{% /multicol %}}
 
 
+---
+
+# Alcuni esempi applicativi
+
+{{% multicol %}}{{% col class="text-right" %}}
+
+<img src="images/recovery-area.jpg" width="700px" style="margin-right: 18px"/>
+
+{{% /col %}}{{% col class="text-left" %}}
+
+<img src="images/warehouse-1.jpg" width="700px" style="margin-left: 18px"/>
+
+{{% /col %}}{{% /multicol %}}
+
+{{% multicol %}}{{% col class="text-right" %}}
+
+<img src="images/collective.svg" width="700px" style="margin-right: 18px"/>
+
+
+{{% /col %}}{{% col class="text-left" %}}
+
+<img src="images/drone_crowd.jpg" width="700px" style="margin-left: 18px" />
+
+{{% /col %}}{{% /multicol %}}
+
     
 ---
 
-
-<iframe width="100%" height="1000px" loading="eager" autoplay="true" src="https://lumasky.show/wp-content/uploads/personal/oblozhka2.html?autoplay=1&controls=0&loop=1&modestbranding=1&mute=1&showinfo=0" ></iframe> 
+<iframe width="100%" height="1000px" src="https://www.youtube.com/embed/TO1gWE7wbdU?si=GhdWDTKjj-aPwJih&autoplay=1&mute=1&controls=0&loop=1&playlist=TO1gWE7wbdU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<!-- <iframe width="100%" height="1000px" loading="eager" autoplay="true" src="https://lumasky.show/wp-content/uploads/personal/oblozhka2.html?autoplay=1&controls=0&loop=1&modestbranding=1&mute=1&showinfo=0" ></iframe>  -->
 
 ---
 
-<iframe width="100%" height="900px" loading="eager" autoplay="true" src="https://www.youtube.com/embed/qy4_3qJbLeA?si=P2jwvfj6-YR9CujO?autoplay=1" frameborder="0"></iframe>
+<!-- scegli un video carino -->
+<iframe width="100%" height="900px" src="https://www.youtube.com/embed/qy4_3qJbLeA?si=P2jwvfj6-YR9CujO&autoplay=1&mute=1&controls=0&loop=1&playlist=qy4_3qJbLeA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ---
 
@@ -84,7 +109,7 @@ Davide Domini, Nicolas Farabegoli, Danilo Pianini, Mirko Viroli
 
 {{% multicol %}}{{% col class="text-center" %}}
 
-<img src="images/robot.png" width="80%"/>
+<img src="images/robot01.png" width="500px"/>
 
 {{% /col %}}{{% col class="text-left" %}}
 
@@ -93,13 +118,84 @@ Abbiamo un robot speciale chiamato **leader**, che *guida* gli altri, ottenendo 
 1. Tutti i robot puntano verso la stessa direzione
 2. Tutti i robot puntano verso il leader
 3. I robot "danzano" in modo coordinato, raggiungendo la stessa direzione puntata dal leader
-4. Formazioni di semplici strutture: tutti i robot si dispongono in linea e in cerchio rispetto al leader.
+4. Formazioni di semplici strutture, dove tutti i robot, rispetto al leader, possono:
+    - disporsi in linea,
+    - disporsi a cerchio,
+    - disporsi in fila,
+    - disporsi in quadrato,
+    - disporsi in formazione a V,
+    - guardare il leader.
 
 {{% /col %}}{{% /multicol %}}
 
 ---
 
-# Un nostro simulatore: MacroSwarm
+# Dalla Progettazione
+
+{{% multicol %}}{{% col class="text-right" %}}
+
+<img src="images/render_closed.jpeg" width="600px" style="margin-right: 18px"/>
+
+{{% /col %}}{{% col class="text-left" %}}
+
+<img src="images/render_open.jpeg" width="600px" style="margin-left: 18px"/>
+
+{{% /col %}}{{% /multicol %}}
+
+{{% multicol %}}{{% col class="text-right" %}}
+
+<img src="images/scheda.jpeg" width="600px" style="margin-right: 18px"/>
+
+{{% /col %}}{{% col class="text-left" %}}
+
+<img src="images/scheda_zoom.jpeg" width="400px" style="margin-left: 120px" />
+
+{{% /col %}}{{% /multicol %}}
+
+----
+
+# Allo sviluppo
+
+<div class="image-slideshow" style="text-align: center;">
+  <img id="slideshow-img" src="images/robot06.jpeg" style="width: 100%; max-width: 100%; display: block; margin: 0 auto; transition: opacity 0.5s ease-in-out;" />
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const images = [
+    'images/robot06.jpeg',
+    'images/robot05.jpeg',
+    'images/robot03.jpeg',
+    'images/robot02.jpeg',
+    'images/robot04.jpeg',
+    'images/IMG_8275.png'
+  ];
+  
+  let currentImageIndex = 0;
+  const imageElement = document.getElementById('slideshow-img');
+  
+  function changeImage() {
+    // Fade out
+    imageElement.style.opacity = '0';
+    
+    setTimeout(() => {
+      // Change image source
+      currentImageIndex = (currentImageIndex + 1) % images.length;
+      imageElement.src = images[currentImageIndex];
+      
+      // Fade in
+      imageElement.style.opacity = '1';
+    }, 250); // Half of transition time
+  }
+  
+  // Change image every 3 seconds
+  setInterval(changeImage, 2000);
+});
+</script>
+
+---
+
+# Un altro nostro simulatore: MacroSwarm
 
 <p align="center">
       <img width=20% src="https://user-images.githubusercontent.com/23448811/224010877-6f5c9d36-d348-4343-8b66-19f78778297e.gif">
@@ -130,12 +226,19 @@ Abbiamo un robot speciale chiamato **leader**, che *guida* gli altri, ottenendo 
 
 <img src="https://avatars.githubusercontent.com/u/23448811?v=4" style="width:15%; border-radius:10px;">
 <b>Gianluca Aguzzi</b> - <em>Post Doc</em></br>
+
+<img src="images/pslab_logo.png" style="width:20%; border-radius:10px; margin-left: 20px">
+<!-- <b>Pervasive Software Laboratory</b> - <em>Research Group</em></br> -->
+
 {{% /col %}}
 
 {{% col class="text-left" %}}
 
 <img src="./images/marti.jpg" style="width:15%; border-radius:10px;">
 <b>Martina Baiardi</b> - <em>Dottoranda</em> </br>
+
+<img src="https://avatars.githubusercontent.com/u/32274195?v=4" style="width:15%; border-radius:10px;">
+<b>Samuele Burattini</b> - <em>Dottorando</em></br>
 
 <img src="https://avatars.githubusercontent.com/u/85068744?v=4" style="width:15%; border-radius:10px;">
 <b>Angela Cortecchia</b> - <em>Dottoranda</em></br>
@@ -152,26 +255,6 @@ Abbiamo un robot speciale chiamato **leader**, che *guida* gli altri, ottenendo 
 
 --- 
 
-<!-- {{% multicol %}}
-{{% col %}}
-## Cosa facciamo?
-
-- Sistemi adattivi auto-organizzanti 
-- Intelligenza artificiale distribuita
-- Ingegneria di sistemi distribuiti complessi
-- Pervasive computing
-- Esplorazione di nuovi paradigmi e linguaggi di programmazione
-- Internet of Things
-- Edge computing
-{{% /col %}}
-
-{{< col >}}
-<img src="./images/smartcity2.webp">
-{{< /col >}}
-
-{{% /multicol %}} -->
-
-
 {{< slide background-image="./images/smartcity.webp" background-opacity="0.45">}}
 
 <div
@@ -187,7 +270,7 @@ transform: translate(-50%, -50%);
 ></div>
 
 <div style="background-color: #EFF1ED99; border-radius: 20px; padding: 20px; max-width: 50%; margin: auto;">
-  <h2 style="margin: 0;">Cosa facciamo?</h2>
+  <h2 style="margin: 0;">Aree di ricerca</h2>
   <ul style="padding: 0; margin: 0;">
     <li>Sistemi adattivi auto-organizzanti</li>
     <li>Intelligenza artificiale distribuita</li>
@@ -195,54 +278,14 @@ transform: translate(-50%, -50%);
     <li>Pervasive computing</li>
     <li>Esplorazione di nuovi paradigmi e linguaggi di programmazione</li>
     <li>Internet of Things</li>
-    <li>Edge computing</li>
+    <li>Cloud-Edge computing</li>
   </ul>
 </div>
 
 ---
 
-# Dalla Progettazione
+Se vuoi scoprire di più parla con noi o contattaci!
 
-{{% multicol %}}{{% col class="text-center" %}}
+{{% qrcode data="https://pslab-unibo.github.io" image="images/pslab_logo.png" backgroundColor="transparent"%}}
 
-<img src="images/render_closed.jpeg" width="90%"/>
-<!-- <img src="images/robot01.png" width="50%"/> -->
-
-{{% /col %}}{{% col class="text-left" %}}
-
-<img src="images/render_open.jpeg" width="90%"/>
-
-{{% /col %}}{{% col class="text-left" %}}
-
-<img src="images/scheda.jpeg" width="100%"/>
-
-{{% /col %}}{{% col class="text-right" %}}
-
-<img src="images/scheda_zoom.jpeg" width="80%"/>
-
-{{% /col %}}{{% /multicol %}}
-
-
-----
-
-# Allo sviluppo
-
-{{% multicol %}}{{% col %}}
-
-<img src="images/robot06.jpeg" width="100%"/>
-
-{{% /col %}}{{% col %}}
-<img src="images/robot05.jpeg" width="100%"/>
-{{% /col %}}{{% col %}}
-<img src="images/robot03.jpeg" width="100%"/>
-
-{{% /col %}}{{% col %}}
-
-<img src="images/robot02.jpeg" width="100%" />
-
-
-{{% /col %}}{{% col %}}
-
-<img src="images/robot04.jpeg" width="100%"/>
-
-{{% /col %}}{{% /multicol %}}
+:)
