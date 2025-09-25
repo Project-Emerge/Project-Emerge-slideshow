@@ -1,5 +1,5 @@
-baseURL = "https://project-emerge.github.io/Project-Emerge-slideshow/"
-languageCode = "en-us"
+baseURL = "https://project-emerge.github.io/Project-Emerge-slideshow"
+languageCode = "it-IT"
 title = "A Hugo theme for creating Reveal.js presentations"
 disableKinds = ["sitemap", "RSS"]
 theme = "reveal-hugo"
@@ -10,7 +10,7 @@ publishDir = "build"
 # uglyURLs = true
 
 [author]
-name = "Danilo Pianini"
+name = "Nicolas Farabegoli"
 
 # currently only the unsafe mode for goldmark is supported
 [markup.goldmark.renderer]
