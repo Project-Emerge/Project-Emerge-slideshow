@@ -198,3 +198,51 @@ transform: translate(-50%, -50%);
     <li>Edge computing</li>
   </ul>
 </div>
+
+---
+
+# Dalla Progettazione
+
+{{% multicol %}}{{% col class="text-center" %}}
+
+<img src="images/render_closed.jpeg" width="90%"/>
+<!-- <img src="images/robot01.png" width="50%"/> -->
+
+{{% /col %}}{{% col class="text-left" %}}
+
+<img src="images/render_open.jpeg" width="90%"/>
+
+{{% /col %}}{{% col class="text-left" %}}
+
+<img src="images/scheda.jpeg" width="100%"/>
+
+{{% /col %}}{{% col class="text-right" %}}
+
+<img src="images/scheda_zoom.jpeg" width="80%"/>
+
+{{% /col %}}{{% /multicol %}}
+
+
+----
+
+# Allo sviluppo
+
+{{% multicol %}}{{% col %}}
+
+<img src="images/robot06.jpeg" width="100%"/>
+
+{{% /col %}}{{% col %}}
+<img src="images/robot05.jpeg" width="100%"/>
+{{% /col %}}{{% col %}}
+<img src="images/robot03.jpeg" width="100%"/>
+
+{{% /col %}}{{% col %}}
+
+<img src="images/robot02.jpeg" width="100%" />
+
+
+{{% /col %}}{{% col %}}
+
+<img src="images/robot04.jpeg" width="100%"/>
+
+{{% /col %}}{{% /multicol %}}
