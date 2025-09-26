@@ -1,6 +1,10 @@
 +++
 title = "Ecosistemi coordinati di robot programmabili"
 outputs = ["Reveal"]
+[reveal_hugo]
+auto_slide = 5000
+auto_slide_stoppable = true
+loop = true
 +++
 
 <script>
